@@ -1,0 +1,10 @@
+streamlit
+vega-datasets
+altair
+pandas
+sklearn
+matplotlib
+keras==2.3.1
+tensorflow
+graphviz
+bokeh==2.0.0
