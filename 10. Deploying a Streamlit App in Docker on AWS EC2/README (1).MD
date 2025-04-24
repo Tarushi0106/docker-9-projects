@@ -79,8 +79,7 @@ sudo docker logs <container-id>
 sudo docker stop <container-id>
 ```
 
-### 📸 Application Running Screenshot  
-![Application Running](Image.jpg)  
+![alt text](image.png) 
 
 ---
 
