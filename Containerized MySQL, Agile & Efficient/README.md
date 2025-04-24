@@ -3,7 +3,7 @@
 ## 📌 Prerequisites
 - ✅ Install Docker on your system.
 - ✅ Ensure Docker is running.
-- ✅ Create an SQL initialization script (e.g., `Tarakk_demo.sql`) with database and table definitions.
+- ✅ Create an SQL initialization script (e.g., `Tarushi_demo.sql`) with database and table definitions.
 
 ---
 
@@ -37,7 +37,7 @@ EXPOSE 3306
 ---
 
 ## 📜 Step 2: Create an SQL Initialization Script
-Create a file named `Tarakk_demo.sql` in the same directory:
+Create a file named `Taruhsi_demo.sql` in the same directory:
 
 ```sql
 CREATE DATABASE Tarak;
