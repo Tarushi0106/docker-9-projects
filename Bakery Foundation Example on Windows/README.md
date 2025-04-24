@@ -202,9 +202,7 @@ This will:
 5. Click **Launch**! 🚀
 
 
-<p align="center">
-  <img src="https://github.com/TarakKatoch/My-Docker-Dockyard/blob/3fc578cc500a51b8f7f138ffccdb81bc1ece9810/Bakery%20Foundation%20Example%20on%20Windows/images/Screenshot%202025-03-20%20012354.png?raw=true" alt="Screenshot">
-</p>
+
 
 ### 4.3 Connect to the Instance  
 
