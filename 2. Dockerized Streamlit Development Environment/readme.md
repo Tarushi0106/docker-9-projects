@@ -1,129 +1,97 @@
-# 🐳 **Dockerized Streamlit Development Environment**  
+# 🚀 Deploying a Dockerized Application on AWS EC2  
 
-This guide helps you set up a **Streamlit application** inside a **Docker container** for an efficient and portable development experience. 🚀  
+This guide walks through deploying an application on **AWS EC2** using **Docker**. Follow the steps below to set up the environment, transfer files, build the Docker image, and run the application.  
 
----
 
-## ✅ **Prerequisites**  
-Before setting up the environment, ensure you have the following installed on your machine:  
-
-🔹 **Docker** 🐳 (Ensure the Docker daemon is running)  
-🔹 **Python 3.9+** 🐍 (Check installation with `python --version`)  
-🔹 **pip** 📦 (Ensure it's up to date with `pip --version`)  
-🔹 **Basic knowledge of Streamlit** 📊  
 
 ---
 
-## 📂 **Directory Structure**  
+## 📌 Prerequisites  
 
-```
-project_root/
-│── .streamlit/
-│   └── config.toml
-│── src/
-│   └── main.py
-│── Dockerfile
-│── requirements.txt
-│── README.md
+✔️ **AWS EC2 Instance** (Amazon Linux 2)  
+✔️ **SSH Key Pair** (`vs-kp-1.pem`)  
+✔️ **Docker Installed** on EC2  
+✔️ Required files: `Dockerfile`, `app.py`, `requirements.txt`, `mushrooms.csv`  
+
+---
+
+## 🛠 Deployment Steps  
+
+### 1️⃣ Update the System  
+```sh
+sudo yum update -y
 ```
 
----
-
-## 📜 **File Explanations**  
-
-### **1️⃣ `.streamlit/config.toml`**  
-This file configures Streamlit settings for local development.  
-
-```toml
-[server]
-headless = true
-runOnSave = true
-fileWatcherType = "poll"
+### 2️⃣ Install Docker  
+```sh
+sudo amazon-linux-extras install docker
 ```
 
----
+### 3️⃣ Start the Docker Service  
+```sh
+sudo service docker start
+```
 
-### **2️⃣ `src/main.py`**  
-This file contains the **core logic** of the Streamlit application, including:  
+### 4️⃣ Create a Directory for Application Files  
+```sh
+mkdir downloads
+```
 
-🏠 **Home Page** → Introduction to the app.  
-📊 **Data Explorer** → Allows users to upload and inspect CSV files.  
-📈 **Visualization Page** → Generates interactive charts and graphs.  
+### 5️⃣ Transfer Files to EC2  
+```sh
+chmod 600 vs-kp-1.pem
+scp -i vs-kp-1.pem Dockerfile app.py requirements.txt mushrooms.csv ec2-user@13.60.105.49:/home/ec2-user/downloads
+```
 
----
+### 6️⃣ Build the Docker Image  
+```sh
+sudo docker build -t my_app:v1.0 -f Dockerfile .
+```
 
-### **3️⃣ `Dockerfile`**  
-Defines the containerized environment for Streamlit.  
-
-```dockerfile
-# Use a lightweight Python image
-FROM python:3.9-slim  
-
-# Set working directory
-WORKDIR /app  
-
-# Copy dependencies and install them
-COPY requirements.txt /app/  
-RUN pip install --no-cache-dir -r requirements.txt  
-
-# Copy all project files
-COPY . /app/  
-
-# Expose Streamlit’s default port
-EXPOSE 8501  
-
-# Run the Streamlit app
-CMD ["streamlit", "run", "src/main.py", "--server.port=8501", "--server.address=0.0.0.0"]
+### 7️⃣ Run the Application in a Container  
+```sh
+sudo docker run -d -p 8501:8501 my_app:v1.0
 ```
 
 ---
 
-### **4️⃣ `requirements.txt`**  
-Contains necessary dependencies:  
+## 🎯 Result  
 
-```text
-streamlit
-pandas
-numpy
-matplotlib
-plotly
+✅ The application is now deployed and running on your **AWS EC2 instance**!  
+
+📌 **Access it via:**  
 ```
+http://<EC2-Public-IP>:8501
+```
+
+🔍 **Check running containers:**  
+```sh
+sudo docker ps
+```
+
+📜 **View container logs:**  
+```sh
+sudo docker logs <container-id>
+```
+
+🛑 **Stop the container:**  
+```sh
+sudo docker stop <container-id>
+```
+
+### 📸 Application Running Screenshot  
+![Application Running](Image.jpg)  
 
 ---
 
-## ⚡ **Steps to Run the Project**  
+## 📢 Additional Notes  
 
-### **1️⃣ Navigate to the project directory**  
-```bash
-cd path/to/project_root
-```
+- Ensure your **EC2 security group** allows inbound traffic on **port 8501**.  
+- If needed, restart Docker:  
+  ```sh
+  sudo service docker restart
+  ```  
+- If the container stops unexpectedly, check logs for errors.  
 
-### **2️⃣ Build the Docker image**  
-```bash
-docker build -t streamlit-app .
-```
+🚀 **Happy Deploying!** 🚀  
 
-### **3️⃣ Run the container**  
-```bash
-docker run -p 8501:8501 streamlit-app
-```
-
-### **4️⃣ Open in Browser**  
-🌐 Go to → [http://localhost:8501](http://localhost:8501)  
-
----
-
-## 🎯 **Conclusion**  
-You now have a **fully functional Streamlit environment** running inside Docker! 🚀  
-
-![Streamlit App Screenshot](https://github.com/vidhi-jaju/DockSpace/blob/ffeee9124d5ab5508d44ce7cdb2debb5a6ce94b1/2.%20Dockerized%20Streamlit%20Development%20Environment/Images/Screenshot%202025-02-19%20013824.png?raw=true)
-![Streamlit App Screenshot](https://github.com/vidhi-jaju/DockSpace/blob/ffeee9124d5ab5508d44ce7cdb2debb5a6ce94b1/2.%20Dockerized%20Streamlit%20Development%20Environment/Images/Screenshot%202025-02-19%20013835.png)
-![Streamlit App Screenshot](https://github.com/vidhi-jaju/DockSpace/blob/ffeee9124d5ab5508d44ce7cdb2debb5a6ce94b1/2.%20Dockerized%20Streamlit%20Development%20Environment/Images/Screenshot%202025-02-19%20013853.png)
-
-
-💡 **Next Steps:**  
-🔹 Add more features to your Streamlit app.  
-🔹 Deploy the containerized app on **AWS, GCP, or Azure**.  
-🔹 Experiment with **Docker Compose** for multi-container applications.  
-
-🚀 **Happy Coding!** 🐳💙
