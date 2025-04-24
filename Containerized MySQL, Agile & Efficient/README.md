@@ -13,7 +13,7 @@ Ensure your project directory is organized as follows:
 ```
 project-directory/
 │── Dockerfile
-│── Tarakk_demo.sql
+│── tarushik_demo.sql
 ```
 
 This structure keeps all necessary files in one place for an efficient setup.
@@ -28,7 +28,7 @@ Create a `Dockerfile` in your project directory:
 FROM mysql:latest
 
 # 📂 Copy initialization script to the container
-COPY Tarakk_demo.sql /docker-entrypoint-initdb.d/
+COPY tarushik_demo.sql /docker-entrypoint-initdb.d/
 
 # 🔥 Expose MySQL port
 EXPOSE 3306
@@ -40,8 +40,8 @@ EXPOSE 3306
 Create a file named `Taruhsi_demo.sql` in the same directory:
 
 ```sql
-CREATE DATABASE Tarak;
-USE Tarak;
+CREATE DATABASE tarushi;
+USE tarushi;
 
 CREATE TABLE students (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -109,10 +109,10 @@ After logging into MySQL, check the available databases:
 SHOW DATABASES;
 ```
 
-🔄 Switch to the `Tarak` database:
+🔄 Switch to the `tarusshi` database:
 
 ```sql
-USE Tarak;
+USE tarushi;
 ```
 
 📊 Query the `students` table:
