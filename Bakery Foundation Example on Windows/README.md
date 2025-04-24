@@ -125,9 +125,7 @@ Run the following AWS CLI command to get the latest Ubuntu AMI:
 ```powershell
 aws ec2 describe-images --owners 099720109477 --filters "Name=name,Values=ubuntu/images/hvm-ssd/ubuntu-focal-20.04-amd64-server-*" --query "Images | sort_by(@, &CreationDate)[-1].ImageId" --output text
 ```
-<p align="center">
-  <img src="https://github.com/TarakKatoch/My-Docker-Dockyard/blob/6d5d87e85a40602d2a417ef341625bd7b6d38607/Bakery%20Foundation%20Example%20on%20Windows/images/Screenshot%202025-03-20%20011116.png?raw=true" alt="Screenshot">
-</p>
+![alt text](image.png)
 
 ✅ Update `bakery.pkr.hcl` by replacing the **`source_ami`** with the new AMI ID:
 
@@ -165,9 +163,7 @@ packer validate bakery.pkr.hcl
 
 ✅ Expected Output: The configuration is valid.
 
-<p align="center">
-  <img src="https://github.com/TarakKatoch/My-Docker-Dockyard/blob/3fc578cc500a51b8f7f138ffccdb81bc1ece9810/Bakery%20Foundation%20Example%20on%20Windows/images/Screenshot%202025-03-20%20011135.png?raw=true" alt="Screenshot">
-</p>
+![alt text](image-1.png)
 
 ### 3.2 Build the Machine Image
 
@@ -183,12 +179,7 @@ This will:
 - Convert it into an **Amazon Machine Image (AMI)**.
 - Delete the temporary instance.
 
-<p align="center">
-  <img src="https://github.com/TarakKatoch/My-Docker-Dockyard/blob/3fc578cc500a51b8f7f138ffccdb81bc1ece9810/Bakery%20Foundation%20Example%20on%20Windows/images/Screenshot%202025-03-20%20011212.png?raw=true" alt="Screenshot">
-</p>
-<p align="center">
-  <img src="https://github.com/TarakKatoch/My-Docker-Dockyard/blob/3fc578cc500a51b8f7f138ffccdb81bc1ece9810/Bakery%20Foundation%20Example%20on%20Windows/images/Screenshot%202025-03-20%20011235.png?raw=true" alt="Screenshot">
-</p>
+
 
 ## Step 4: Deploy and Test the AMI
 
@@ -197,9 +188,7 @@ This will:
 2. Navigate to **EC2 → AMIs** (Set the region you used when creating the AMI).  
 3. Find the AMI named: bakery-foundation-python39-timestamp
 
-<p align="center">
-  <img src="https://github.com/TarakKatoch/My-Docker-Dockyard/blob/3fc578cc500a51b8f7f138ffccdb81bc1ece9810/Bakery%20Foundation%20Example%20on%20Windows/images/Screenshot%202025-03-20%20011612.png?raw=true" alt="Screenshot">
-</p>
+
 
 ### 4.2 Launch an EC2 Instance with Your AMI  
 
@@ -212,12 +201,7 @@ This will:
    - **Security Group**: Allow **SSH (port 22)** and other required ports.  
 5. Click **Launch**! 🚀
 
-<p align="center">
-  <img src="https://github.com/TarakKatoch/My-Docker-Dockyard/blob/3fc578cc500a51b8f7f138ffccdb81bc1ece9810/Bakery%20Foundation%20Example%20on%20Windows/images/Screenshot%202025-03-20%20011811.png?raw=true" alt="Screenshot">
-</p>
-<p align="center">
-  <img src="https://github.com/TarakKatoch/My-Docker-Dockyard/blob/3fc578cc500a51b8f7f138ffccdb81bc1ece9810/Bakery%20Foundation%20Example%20on%20Windows/images/Screenshot%202025-03-20%20011842.png?raw=true" alt="Screenshot">
-</p>
+
 <p align="center">
   <img src="https://github.com/TarakKatoch/My-Docker-Dockyard/blob/3fc578cc500a51b8f7f138ffccdb81bc1ece9810/Bakery%20Foundation%20Example%20on%20Windows/images/Screenshot%202025-03-20%20012354.png?raw=true" alt="Screenshot">
 </p>
