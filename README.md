@@ -7,15 +7,15 @@ Welcome to **DockSpace**! 🌊 This repository is my personal harbor of containe
 
 ### 📦 **Containerized Projects on Board:**  
 
-**1. [DOCKER BASICS: Hello, Container World!]([https://github.com/vidhi-jaju/DockSpace/tree/e58f4f66a04d80eea8636f8b2aa8ccab0dc61864/1.DOCKER%20BASICS%3A%20Hello%20World](https://github.com/Tarushi0106/docker-9-projects/tree/main/1.DOCKER%20BASICS_%20Hello%20World)) 🐳**  
+**1. [DOCKER BASICS: Hello, Container World!](https://github.com/Tarushi0106/docker-9-projects/blob/main/1.DOCKER%20BASICS_%20Hello%20World/readme.md) 🐳**  
    - **Goal:** Kickstart my Docker journey by running the classic "Hello World" container.  
    - **Key Focus:** Understanding basic Docker commands, image execution, and container runtime.  
 
-**2. [Dockerized Streamlit Development Environment]([https://github.com/vidhi-jaju/DockSpace/tree/df41de74910a233bef78986f156505a9be520188/2.%20Dockerized%20Streamlit%20Development%20Environment](https://github.com/Tarushi0106/docker-9-projects/tree/main/10.%20Deploying%20a%20Streamlit%20App%20in%20Docker%20on%20AWS%20EC2)) 📊**  
+**2. [Dockerized Streamlit Development Environment](https://github.com/Tarushi0106/docker-9-projects/blob/main/2.%20Dockerized%20Streamlit%20Development%20Environment/readme.md) 📊**  
    - **Goal:** Build a containerized Streamlit environment for smooth and efficient data visualization.  
    - **Key Focus:** Web app deployment, interactive UI, and container efficiency.  
 
-**3. [Titanic Survival Predictor: Containerized Streamlit App]([https://github.com/vidhi-jaju/DockSpace/tree/df41de74910a233bef78986f156505a9be520188/3.Titanic%20Survival%20Predictor%20Containerized%20Streamlit%20App](https://github.com/Tarushi0106/docker-9-projects/tree/main/Titanic_Survival_Predictor)) 🚢**  
+**3. [Titanic Survival Predictor: Containerized Streamlit App](https://github.com/Tarushi0106/docker-9-projects/blob/main/Titanic_Survival_Predictor/README.md) 🚢**  
    - **Goal:** Deploy a Machine Learning-powered Titanic survival prediction app using Streamlit and Docker.  
    - **Key Focus:** ML model serving, interactive UI, and cloud deployment.  
 
@@ -51,7 +51,7 @@ Welcome to **DockSpace**! 🌊 This repository is my personal harbor of containe
    - **Goal:** Deploy and manage microservices efficiently using Kubernetes and Minikube.  
    - **Key Focus:** Service discovery, load balancing, and containerized microservices deployment.  
 
-**12. [Microservices Architecture using Docker Swarm]() ⚓**  
+**12. [Microservices Architecture using Docker Swarm](https://github.com/Tarushi0106/docker-9-projects/tree/main/12.%20Microservices%20Architecture%20using%20Docker%20Swarm#readme) ⚓**  
    - **Goal:** Build and deploy a scalable microservices-based application using Docker Swarm.  
    - **Key Focus:** Load balancing, service discovery, and distributed application management.  
 
